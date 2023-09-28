@@ -10,6 +10,11 @@
 <body>
     <header class="header">
         <a href="#" class="logo">Inga</a>
+        <div class="mobile-menu" onclick="toggleMobileMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
         <nav class="navbar">
             <a href="#" class="active">Home</a>
             <a href="#">Portfolio</a>
@@ -17,9 +22,9 @@
         </nav>
     </header>
     <section class="home">
-<div class="ring-img">
-    <img src="https://github.com/IngaFom/IngaFom.github.io/blob/main/IMG_9880.JPEG" alt="Inga P">
-  </div>
+        <div class="ring-img">
+            <img src="https://github.com/IngaFom/IngaFom.github.io/blob/main/IMG_9880.JPEG?raw=true" alt="Inga P">
+        </div>
         <div class="home-content">
             <h1>Welcome to my page.</h1>
             <h3>My name is Inga</h3>
@@ -42,5 +47,11 @@
 
         <span class="home-imgHover"></span>
     </section>
+    <script>
+        function toggleMobileMenu() {
+            var navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

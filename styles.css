@@ -1,7 +1,7 @@
 /* import google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght/300;400;500;600;700;800;900&display=swap');
 
-/* reset def styles, set font-family */  
+/* reset default styles, set font-family */  
 body {
     margin: 0;
     padding: 0;
@@ -15,7 +15,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 10px 10%;
+    padding: 20px 10%;
     background: transparent;
     display: flex;
     justify-content: space-around;
@@ -29,53 +29,6 @@ body {
     color: #ededed;
     text-decoration: none;
     font-weight: 600;
-
-}
-
-/* add a media query for smaller screens */
-
-@media screen and (max-width: 768px) {
-    .header {
-        padding: 10px 5%;
-    }
-
-    .navbar {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        margin-top: 10px;
-    }
-
-    .navbar a {
-        margin-left: 0;
-    }
-
-    .home-content h1 {
-        font-size: 36px;
-    }
-
-    .home-content h3 {
-        font-size: 24px;
-    }
-
-    .home-content p {
-        font-size: 14px;
-    }
-
-    .btn-box {
-        width: 100%;
-    }
-
-    .btn-box a {
-        width: 48%;
-        font-size: 16px;
-    }
-
-    .home-sci {
-        width: 100%;
-        justify-content: center;
-        bottom: 20px;
-    }
 }
 
 .logo::before {
@@ -90,7 +43,24 @@ body {
     animation-delay: 0.4s;
 }
 
-.navbar a{
+/* Mobile menu icon */
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.mobile-menu .bar {
+    width: 30px;
+    height: 3px;
+    background-color: #ededed;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+.navbar a {
     font-size: 18px;
     color: #ededed;
     text-decoration: none;
@@ -222,7 +192,6 @@ body {
 .btn-box a:nth-child(2) {
     background: transparent;
     color: #00abf0;
-
 }
 
 .btn-box a:nth-child(2):hover {
@@ -309,7 +278,6 @@ body {
     width: 100%;
 }
 
-
 .home-imgHover {
     position: absolute;
     top: 0;
@@ -355,13 +323,13 @@ body {
     justify-content: center;
     align-items: center;
     animation: spin 10s linear infinite;
-  }
-  
-  /* Style the image inside the ring */
-  .ring-img img {
+}
+
+/* Style the image inside the ring */
+.ring-img img {
     width: 80%; /* Adjust the size of the image inside the ring */
     height: auto;
-  }
+}
 
 /* keyframes animation */
 @keyframes showRight {
@@ -369,7 +337,6 @@ body {
         width: 0;
     }
 }
-
 
 @keyframes manipActiveHover {
     100% {
@@ -382,6 +349,37 @@ body {
         transform: rotate(0deg);
     }
     100% {
-        transofrm: rotate(360deg);
+        transform: rotate(360deg); /* Fixed the typo here */
+    }
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 20px 5%;
+    }
+
+    .navbar.active {
+        display: flex;
+        flex-direction: column;
+        background: #081b29;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        padding: 10px;
+        box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .home-content h1 {
+        font-size: 36px;
     }
 }
