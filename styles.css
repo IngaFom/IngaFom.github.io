@@ -1,13 +1,14 @@
 /* import google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght/300;400;500;600;700;800;900&display=swap');
 
-/* reset default styles, set font-family */  
+/* reset default styles, set font-family */
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     color: #c8d3db;
+    background: #081b29; /* Цвет фона */
 }
 
 .header {
@@ -21,6 +22,11 @@ body {
     justify-content: space-around;
     align-items: center;
     z-index: 100;
+    transition: background 0.3s; /* Добавлен переход для изменения цвета фона */
+}
+
+.header.active {
+    background: #081b29; /* Измените на желаемый цвет фона при прокрутке */
 }
 
 .logo {
@@ -29,18 +35,11 @@ body {
     color: #ededed;
     text-decoration: none;
     font-weight: 600;
+    transition: color 0.3s; /* Добавлен переход для изменения цвета текста */
 }
 
-.logo::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: #081b29;    
-    animation: showRight 1s ease forwards;
-    animation-delay: 0.4s;
+.header.active .logo {
+    color: #00abf0; /* Измените на желаемый цвет текста при прокрутке */
 }
 
 /* Mobile menu icon */
@@ -115,7 +114,7 @@ body {
     right: 0;
     width: 100%;
     height: 100%;
-    background: #081b29;    
+    background: #081b29;
     animation: showRight 1s ease forwards;
     animation-delay: 1s;
 }
@@ -134,7 +133,7 @@ body {
     right: 0;
     width: 100%;
     height: 100%;
-    background: #081b29;    
+    background: #081b29;
     animation: showRight 1s ease forwards;
     animation-delay: 1.3s;
 }
@@ -152,7 +151,7 @@ body {
     right: 0;
     width: 100%;
     height: 100%;
-    background: #081b29;    
+    background: #081b29;
     animation: showRight 1s ease forwards;
     animation-delay: 1.6s;
 }
@@ -172,7 +171,7 @@ body {
     right: 0;
     width: 100%;
     height: 100%;
-    background: #081b29;    
+    background: #081b29;
     animation: showRight 1s ease forwards;
     animation-delay: 2.5s;
     z-index: 2;
@@ -242,12 +241,12 @@ body {
     justify-content: space-between;
 }
 
-.home-sci ::before {
+.home-sci::before {
     top: 0;
     right: 0;
     width: 100%;
     height: 100%;
-    background: #081b29;    
+    background: #081b29;
     z-index: 1;
 }
 
@@ -316,7 +315,7 @@ body {
     right: 0;
     width: 100%;
     height: 100%;
-    background: #081b29;    
+    background: #081b29;
     animation: showRight 1s ease forwards;
     animation-delay: 5s;
     z-index: 100;
@@ -324,13 +323,13 @@ body {
 
 .ring-img {
     position: absolute;
-    top: 20%; 
-    right: 90px; 
+    top: 20%;
+    right: 90px;
     width: 300px;
-    height: 300px; 
+    height: 300px;
     background: transparent;
-    border: 2px solid; 
-    border-radius: 20%; 
+    border: 2px solid;
+    border-radius: 20%;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -390,12 +389,12 @@ body {
     .navbar a {
         margin: 10px 0;
     }
-}
 
     .home {
         padding: 100px 5%;
-}
+    }
 
     .home-content h1 {
         font-size: 36px;
+    }
 }
