@@ -398,6 +398,16 @@ body {
         font-size: 36px;
     }
 
+    .home-sci {
+        position: absolute;
+        bottom: 20px; /* Изменено с 50px на 20px, чтобы поднять иконки */
+        left: 50%;
+        transform: translateX(-50%);
+        width: auto; /* Изменено с 170px на auto, чтобы иконки подстраивались под контент */
+        display: flex;
+        justify-content: space-between;
+    }
+
     .home-sci a {
         position: relative;
         display: inline-flex;
