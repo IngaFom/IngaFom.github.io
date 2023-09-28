@@ -1,14 +1,13 @@
 /* import google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght/300;400;500;600;700;800;900&display=swap');
 
-/* reset default styles, set font-family */
+/* reset default styles, set font-family */  
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     color: #c8d3db;
-    background: #081b29; /* Цвет фона */
 }
 
 .header {
@@ -22,11 +21,6 @@ body {
     justify-content: space-around;
     align-items: center;
     z-index: 100;
-    transition: background 0.3s; /* Добавлен переход для изменения цвета фона */
-}
-
-.header.active {
-    background: #081b29; /* Измените на желаемый цвет фона при прокрутке */
 }
 
 .logo {
@@ -35,11 +29,18 @@ body {
     color: #ededed;
     text-decoration: none;
     font-weight: 600;
-    transition: color 0.3s; /* Добавлен переход для изменения цвета текста */
 }
 
-.header.active .logo {
-    color: #00abf0; /* Измените на желаемый цвет текста при прокрутке */
+.logo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;    
+    animation: showRight 1s ease forwards;
+    animation-delay: 0.4s;
 }
 
 /* Mobile menu icon */
@@ -62,10 +63,10 @@ body {
 .navbar {
     display: flex;
     justify-content: center;
-    background-color: #081b29; /* Цвет фона навбара */
-    padding: 10px 0; /* Внутренние отступы сверху и снизу */
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2); /* Тень навбара */
-    border-top: 3px solid #00abf0; /* Верхняя граница навбара */
+    background-color: #081b29;
+    padding: 10px 0;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    border-top: 3px solid #00abf0;
 }
 
 .navbar a {
@@ -79,30 +80,53 @@ body {
 
 /* Стили для активной ссылки */
 .navbar a.active {
-    color: rgb(0, 221, 250); /* Цвет активной ссылки */
+    color: rgb(0, 221, 250);
 }
 
 .navbar a:hover {
-    color: #00abf0; /* Цвет ссылки при наведении */
+    color: #00abf0;
 }
 
 .home {
     height: 100vh;
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEUIGylC7T+UAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII=') no-repeat;
+    background: url('https://www.freecodecamp.org/news/content/images/size/w2000/2022/09/jonatan-pie-3l3RwQdHRHg-unsplash.jpg') no-repeat;
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
-    padding: 0 10%;
+    padding: 0 5%;
+    flex-direction: column;
+    text-align: center;
+}
+
+.ring-img {
+    width: 150px;
+    height: 150px;
+    background: transparent;
+    border: 2px solid;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: spin 10s linear infinite;
+}
+
+/* Style the image inside the ring */
+.ring-img img {
+    width: 100%; /* Adjust the size of the image inside the ring */
+    height: auto;
 }
 
 .home-content {
     max-width: 500px;
+    text-align: center;
+    margin-top: 20px;
 }
 
 .home-content h1 {
     position: relative;
-    font-size: 56px;
+    font-size: 36px;
     font-weight: 700;
     line-height: 1.2;
 }
@@ -114,14 +138,14 @@ body {
     right: 0;
     width: 100%;
     height: 100%;
-    background: #081b29;
+    background: #081b29;    
     animation: showRight 1s ease forwards;
     animation-delay: 1s;
 }
 
 .home-content h3 {
     position: relative;
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 700;
     color: #00abf0;
 }
@@ -133,7 +157,7 @@ body {
     right: 0;
     width: 100%;
     height: 100%;
-    background: #081b29;
+    background: #081b29;    
     animation: showRight 1s ease forwards;
     animation-delay: 1.3s;
 }
@@ -151,7 +175,7 @@ body {
     right: 0;
     width: 100%;
     height: 100%;
-    background: #081b29;
+    background: #081b29;    
     animation: showRight 1s ease forwards;
     animation-delay: 1.6s;
 }
@@ -159,9 +183,8 @@ body {
 .home-content .btn-box {
     position: relative;
     display: flex;
-    justify-content: space-between;
-    width: 345px;
-    height: 50px;
+    flex-direction: column;
+    width: 100%;
 }
 
 .home-content .btn-box::before {
@@ -171,7 +194,7 @@ body {
     right: 0;
     width: 100%;
     height: 100%;
-    background: #081b29;
+    background: #081b29;    
     animation: showRight 1s ease forwards;
     animation-delay: 2.5s;
     z-index: 2;
@@ -182,8 +205,8 @@ body {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 150px;
-    height: 100%;
+    width: 100%;
+    height: 50px;
     background: #00abf0;
     border: 1px solid #00abf0;
     border-radius: 15px;
@@ -194,6 +217,7 @@ body {
     letter-spacing: 1px;
     z-index: 1;
     overflow: hidden;
+    margin-bottom: 10px;
     transition: 0.5s;
 }
 
@@ -232,26 +256,14 @@ body {
 }
 
 .home-sci {
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 170px;
+    position: relative;
     display: flex;
     justify-content: space-between;
-}
-
-.home-sci::before {
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: #081b29;
-    z-index: 1;
+    width: 170px;
+    margin-top: 20px;
 }
 
 .home-sci a {
-    position: relative;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -260,87 +272,15 @@ body {
     background: transparent;
     border: 2px solid #00abf0;
     border-radius: 50%;
-    font-size: 120%;
+    font-size: 24px;
     color: #00abf0;
     text-decoration: none;
-    z-index: 1;
-    overflow: hidden;
-    transition: 0.5s;
-    animation: showRight 5s alternate-reverse;
+    transition: 0.3s;
 }
 
 .home-sci a:hover {
+    background-color: #00abf0;
     color: #081b29;
-}
-
-.home-sci a::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    border-radius: 50%;
-    background: #081b29;
-    z-index: -1;
-    transition: transform 0.5s;
-}
-
-.home-sci a:hover::before {
-    width: 100%;
-}
-
-.home-imgHover {
-    position: absolute;
-    top: 0;
-    right: 30px;
-    width: 300px;
-    height: 100px;
-    background: transparent;
-    transition: 3s;
-    animation: manipActiveHover 0.1s forwards;
-    animation-delay: 4s;
-    pointer-events: none;
-}
-
-.home-imgHover:hover {
-    background: #081b29;
-    opacity: 0.8s;
-}
-
-.home-imgHover::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: #081b29;
-    animation: showRight 1s ease forwards;
-    animation-delay: 5s;
-    z-index: 100;
-}
-
-.ring-img {
-    position: absolute;
-    top: 20%;
-    right: 90px;
-    width: 300px;
-    height: 300px;
-    background: transparent;
-    border: 2px solid;
-    border-radius: 20%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: spin 10s linear infinite;
-}
-
-/* Style the image inside the ring */
-.ring-img img {
-    width: 100%; /* Adjust the size of the image inside the ring */
-    height: auto;
 }
 
 /* keyframes animation */
@@ -350,18 +290,13 @@ body {
     }
 }
 
-@keyframes manipActiveHover {
-    100% {
-        pointer-events: auto;
-    }
-}
-
+/* keyframes animation for the spinning image */
 @keyframes spin {
     0% {
         transform: rotate(0deg);
     }
     100% {
-        transform: rotate(360deg); /* Fixed the typo here */
+        transform: rotate(360deg);
     }
 }
 
@@ -377,7 +312,7 @@ body {
 
     .navbar {
         flex-direction: column;
-        background: #081b29;
+        background-color: #081b29;
         position: absolute;
         top: 60px;
         right: 0;
@@ -390,50 +325,11 @@ body {
         margin: 10px 0;
     }
 
-    .home {
-        padding: 100px 5%;
-    }
-
     .home-content h1 {
         font-size: 36px;
     }
 
     .home-sci {
-        position: absolute;
-        bottom: 20px; /* Изменено с 50px на 20px, чтобы поднять иконки */
-        left: 50%;
-        transform: translateX(-50%);
-        width: auto; /* Изменено с 170px на auto, чтобы иконки подстраивались под контент */
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .home-sci a {
-        position: relative;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        width: 40px;
-        height: 40px;
-        background: transparent;
-        border: 2px solid #00abf0;
-        border-radius: 50%;
-        font-size: 120%;
-        color: #00abf0;
-        text-decoration: none;
-        z-index: 1;
-        overflow: hidden;
-        transition: 0.5s;
-        animation: showRight 5s alternate-reverse;
-        cursor: pointer; /* Добавьте эту строку */
-    }
-
-    /* Media query для еще более узких экранов, например, для мобильных устройств в портретной ориентации */
-    @media screen and (max-width: 480px) {
-        .home-content h1 {
-            font-size: 24px; /* Уменьшаем размер заголовка для меньших экранов */
-        }
-
-        /* Добавьте дополнительные стили по мере необходимости */
+        margin-top: 10px;
     }
 }
