@@ -15,7 +15,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 10%;
+    padding: 10px 10%;
     background: transparent;
     display: flex;
     justify-content: space-around;
@@ -30,6 +30,52 @@ body {
     text-decoration: none;
     font-weight: 600;
 
+}
+
+/* add a media query for smaller screens */
+
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 10px 5%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .navbar a {
+        margin-left: 0;
+    }
+
+    .home-content h1 {
+        font-size: 36px;
+    }
+
+    .home-content h3 {
+        font-size: 24px;
+    }
+
+    .home-content p {
+        font-size: 14px;
+    }
+
+    .btn-box {
+        width: 100%;
+    }
+
+    .btn-box a {
+        width: 48%;
+        font-size: 16px;
+    }
+
+    .home-sci {
+        width: 100%;
+        justify-content: center;
+        bottom: 20px;
+    }
 }
 
 .logo::before {
