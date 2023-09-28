@@ -366,35 +366,44 @@ body {
 }
 
 /* Media query for smaller screens */
-@media screen and (max-width: 768px) {
-    .header {
-        padding: 20px 5%;
-    }
-
-    .mobile-menu {
-        display: block;
-    }
-
-    .navbar {
-        flex-direction: column;
-        background: #081b29;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 100%;
-        padding: 10px;
-        box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    .navbar a {
-        margin: 10px 0;
-    }
-
-    .home {
-        padding: 100px 5%;
+@media screen and (max-width: 480px) {
+    .home-content {
+        max-width: 100%;
+        text-align: center;
     }
 
     .home-content h1 {
-        font-size: 36px;
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .navbar {
+        padding: 5px 0;
+    }
+
+    .navbar a {
+        font-size: 16px;
+        margin: 5px 0;
+    }
+
+    .ring-img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .ring-img img {
+        width: 100%;
+        height: auto;
+    }
+
+    .home-sci {
+        bottom: 20px;
+        width: 120px;
+    }
+
+    .home-sci a {
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
     }
 }
