@@ -60,18 +60,31 @@ body {
     transition: 0.4s;
 }
 
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #081b29; /* Цвет фона навбара */
+    padding: 10px 0; /* Внутренние отступы сверху и снизу */
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2); /* Тень навбара */
+    border-top: 3px solid #00abf0; /* Верхняя граница навбара */
+}
+
 .navbar a {
     font-size: 18px;
     color: #ededed;
     text-decoration: none;
     font-weight: 500;
-    margin-left: 35px;
+    margin: 0 20px;
     transition: 0.3s;
 }
 
-.navbar a:hover,
+/* Стили для активной ссылки */
 .navbar a.active {
-    color: rgb(0, 221, 250);
+    color: rgb(0, 221, 250); /* Цвет активной ссылки */
+}
+
+.navbar a:hover {
+    color: #00abf0; /* Цвет ссылки при наведении */
 }
 
 .home {
@@ -327,7 +340,7 @@ body {
 
 /* Style the image inside the ring */
 .ring-img img {
-    width: 80%; /* Adjust the size of the image inside the ring */
+    width: 100%; /* Adjust the size of the image inside the ring */
     height: auto;
 }
 
@@ -363,7 +376,26 @@ body {
         display: block;
     }
 
+    .navbar {
+        flex-direction: column;
+        background: #081b29;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        padding: 10px;
+        box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar a {
+        margin: 10px 0;
+    }
+}
+
+    .home {
+        padding: 100px 5%;
+}
+
     .home-content h1 {
         font-size: 36px;
-    }
 }
