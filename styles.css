@@ -359,22 +359,6 @@ body {
         padding: 20px 5%;
     }
 
-    .navbar.active {
-        display: flex;
-        flex-direction: column;
-        background: #081b29;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 100%;
-        padding: 10px;
-        box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    .navbar {
-        display: none;
-    }
-
     .mobile-menu {
         display: block;
     }
