@@ -366,44 +366,44 @@ body {
 }
 
 /* Media query for smaller screens */
-@media screen and (max-width: 480px) {
-    .home-content {
-        max-width: 100%;
-        text-align: center;
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 20px 5%;
     }
 
-    .home-content h1 {
-        font-size: 28px;
-        margin-bottom: 20px;
+    .mobile-menu {
+        display: block;
     }
 
     .navbar {
-        padding: 5px 0;
+        flex-direction: column;
+        background: #081b29;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        padding: 10px;
+        box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
     }
 
     .navbar a {
-        font-size: 16px;
-        margin: 5px 0;
+        margin: 10px 0;
     }
 
-    .ring-img {
-        width: 200px;
-        height: 200px;
+    .home {
+        padding: 100px 5%;
     }
 
-    .ring-img img {
-        width: 100%;
-        height: auto;
+    .home-content h1 {
+        font-size: 36px;
     }
 
-    .home-sci {
-        bottom: 20px;
-        width: 120px;
-    }
+    /* Media query для еще более узких экранов, например, для мобильных устройств в портретной ориентации */
+    @media screen and (max-width: 480px) {
+        .home-content h1 {
+            font-size: 24px; /* Уменьшаем размер заголовка для меньших экранов */
+        }
 
-    .home-sci a {
-        width: 30px;
-        height: 30px;
-        font-size: 18px;
+        /* Добавьте дополнительные стили по мере необходимости */
     }
 }
