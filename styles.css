@@ -301,7 +301,7 @@ body {
 }
 
 /* Media query for smaller screens */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 320px) {
     .header {
         padding: 20px 5%;
     }
